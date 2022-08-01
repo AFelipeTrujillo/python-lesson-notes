@@ -112,3 +112,30 @@ print("the result is ", result)
 ### Operators
 
 ![python operators](https://i.imgur.com/Qf2TS3o.png)
+
+#### Sum plus f-string in python
+f-strings are a great new way to format strings. Not only are they more readable, more concise, and less prone to error than other ways of formatting, but they are also faster!
+
+```
+number1 = 2
+number2 = 3
+sum = number1 + number2
+print(f'the sum is {sum}')
+```
+#### All operators in Python
+```
+number1 = 2
+number2 = 3
+subtraction = number1 - number2
+print(f'the subtraction is {subtraction}')
+multiplication = number1 * number2
+print(f'the multiplication is {multiplication}')
+division = number1 / number2
+print(f'the division is {division}')
+integer_division = number1 // number2
+print(f'the division is {integer_division}')
+module = number1 % number2
+print(f'the module is {module}')
+exp = number1 ** number2
+print(f'the exponent is {exp}')
+```
