@@ -139,3 +139,67 @@ print(f'the module is {module}')
 exp = number1 ** number2
 print(f'the exponent is {exp}')
 ```
+#### Comparison Operators
+```
+a = 4
+b = 2
+
+result = (a == b)
+print(f'Result == {result}')
+result = (a != b)
+print(f'Result != {result}')
+result = a > b
+print(f'Result > {result}')
+result = a >= b
+print(f'Result >= {result}')
+result = a < b
+print(f'Result < {result}')
+result = a <= b
+print(f'Result <= {result}')
+```
+#### Logical Operators
+```
+a = True
+b = False
+
+result = a and b
+print(f'Result AND {result}')
+result = a or b
+print(f'Result AND {result}')
+
+result = not a
+print(f'Result AND {result}')
+```
+
+#### Simplifying AND Operator
+```
+myVarOne = 15
+
+if 15 <= myVarOne < 30:
+    print(f'the number {myVarOne} is between 15 to 30')
+```
+
+## Lesson 5
+
+### Python Conditional Statements
+
+#### IF / ELSE
+```
+myVar = True
+
+if myVar:
+    print(f'Is True')
+else:
+    print(f'Is not True')
+```
+```
+myVar = 'hi there'
+
+if myVar == True:
+    print(f'Is True')
+elif myVar == False:
+    print(f'Is False')
+else:
+    print(f'Unknown format')
+
+```
