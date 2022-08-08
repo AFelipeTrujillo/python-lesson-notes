@@ -203,3 +203,79 @@ else:
     print(f'Unknown format')
 
 ```
+#### Simplifying If Statements
+```
+myVar = True
+
+print('This is True') if myVar else print('This is False')
+```
+
+### Python Control Statements
+
+#### While
+![while](https://i.imgur.com/OVAxks2.jpg)
+```
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+else:
+    print('END OF WHILE')
+```
+#### For
+```
+string = 'Hi there'
+
+for word in string:
+    print(word)
+else:
+    print("END OF FOR")
+```
+#### Break
+```
+for word in 'Holland':
+    if word == 'l':
+        print(f'Word found: {word}')
+        break
+else:
+    print('END OF FOR')
+```
+#### Continue
+```
+for i in range(6):
+    if i % 2 == 0:
+        print(i)
+        continue
+
+for i in range(6):
+    if i % 2 != 0:
+        continue
+    print(i)
+```
+## Lesson 6
+### Collections
+#### Lists
+```
+names = ['Mary', 'John', 'Lissa', 'Phill']
+print(names)
+print(f'Name[0]: {names[0]}')
+print(f'Name[1]: {names[1]}')
+print(f'Name[2]: {names[2]}')
+print(f'Name[-1]: {names[-1]}') # Phill
+print(f'Name[-2]: {names[-2]}') # Lissa)
+```
+##### Range
+```
+names = ['Mary', 'John', 'Lissa', 'Phill', 'Martha']
+print(names[0:2])
+print(names[:3])
+print(names[1:])
+names[1] = 'Adam'
+print(names)
+for name in names:
+    print(name)
+else:
+    print('END OF FOR')
+```
+#### Tuples
+
