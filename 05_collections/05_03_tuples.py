@@ -14,3 +14,11 @@ fruitList = list(fruits)
 fruitList[0] = 'Blackberry'
 fruits = tuple(fruitList)
 print(fruits)
+
+numbers = (13, 1, 8, 3, 2, 5, 8)
+list_of_numbers = []
+for number in numbers:
+    if number < 5:
+        list_of_numbers.append(number)
+
+print(f'List is {list_of_numbers}')

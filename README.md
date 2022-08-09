@@ -296,3 +296,119 @@ fruitList[0] = 'Blackberry'
 fruits = tuple(fruitList)
 print(fruits)
 ```
+#### Set
+```
+planets = {'Mars', 'Jupiter', 'Venus'}
+print(planets)
+print(len(planets))
+print('Mars' in planets)
+planets.add('Earth')
+print(f'Set content {planets}')
+planets.add('Earth')
+print(f'Set content {planets}')
+planets.remove('Earth')
+print(f'Set content {planets}')
+planets.discard('Earth')
+planets.clear()
+print(f'Set content {planets}')
+del planets
+```
+#### Dictionaries
+```
+myDictionary = {
+    'IDE': 'Integrated Development Environment',
+    'OOP': 'Object Oriented Programming',
+    'DBMS': 'DataBase Management System'
+}
+
+print(myDictionary)
+print(len(myDictionary))
+print(myDictionary['IDE'])
+print(myDictionary.get('OOP'))
+myDictionary['IDE'] = 'integrated development environment'
+print(myDictionary)
+
+for key, value in myDictionary.items():
+    print(key, value)
+
+for key in myDictionary.keys():
+    print(key)
+
+for value in myDictionary.values():
+    print(value)
+
+print('IDE' in myDictionary)
+
+myDictionary['PK'] = 'Primary Key'
+
+print(myDictionary)
+
+myDictionary.pop('DBMS')
+print(myDictionary)
+
+myDictionary.clear()
+print(myDictionary)
+
+del myDictionary
+```
+## Lesson 6
+### Functions
+```
+def myFunction():
+    print('Hi there from my function')
+
+
+myFunction()
+```
+#### Params
+```
+def myFunction(name):
+    print(f'Hi there {name} from my function')
+
+
+myFunction(name='Andy')
+myFunction(name='Johanna')
+```
+#### Return
+```
+def mySumFunction(numberList = None) -> int:
+    if numberList is None:
+        return 0
+    total = 0
+    for number in numberList:
+        total += number
+    return total
+
+
+print(f'Total is {mySumFunction([1, 2, 3, 4, 5])}')
+```
+#### Many Arguments
+```
+def myNames(*names):
+    for name in names:
+        print(name)
+
+
+myNames('Andy', 'Johanna', 'Dany', 'Fer')
+```
+#### Keywords
+```
+def myKeys(**kwargs):
+    for key, value in kwargs.items():
+        print(f'key = {key}, value = {value}')
+
+
+myKeys(IDE = 'Integrated Development Environment', PK = 'Primary Key')
+```
+#### Recursive Function
+```
+def factorial(number):
+    if number == 1:
+        return 1
+    else:
+        return number * factorial(number - 1)
+
+
+number = 5
+print(f'The factorial of {number} is {factorial(number)}')
+```
