@@ -412,3 +412,51 @@ def factorial(number):
 number = 5
 print(f'The factorial of {number} is {factorial(number)}')
 ```
+## Lesson 7
+### Classes and Objects
+```
+class Person:
+    def __init__(self, name, lastname, age, *phones, **colors):
+        self.name = name
+        self.lastname = lastname
+        self.age = age
+        self.phones = phones
+        self.colors = colors
+
+    def show(self):
+        print(f'{self.name} {self.lastname} {self.age} {self.phones} {self.colors}')
+
+
+p = Person(name='Andy', lastname='Smith', age=33, phones = ('+134568483', '+573244556'), colors= { 'y' : 'Yellow'})
+p.phone = '+134567543'
+p.show()
+Person.show(p)
+
+p2 = Person('Anne', 'Rodriguez',15)
+p2.show()
+```
+### Encapsulation (GET and SET)
+```
+class Person:
+    def __init__(self, name, lastname, age):
+        self._name = name
+        self.lastname = lastname
+        self.age = age
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        self._name = name
+
+    def show(self):
+        print(f'{self.name} {self.lastname} {self.age}')
+
+
+p = Person(name='Andy', lastname='Smith', age=33)
+print(p.name)
+p.name = 'John'
+print(p.name)
+```
