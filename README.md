@@ -440,8 +440,8 @@ p2.show()
 class Person:
     def __init__(self, name, lastname, age):
         self._name = name
-        self.lastname = lastname
-        self.age = age
+        self._lastname = lastname
+        self._age = age
 
     @property
     def name(self):
@@ -451,12 +451,73 @@ class Person:
     def name(self, name):
         self._name = name
 
+    @property
+    def lastname(self):
+        return self._lastname
+
+    @lastname.setter
+    def lastname(self, lastname):
+        self._lastname = lastname
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        self._age = age
+
     def show(self):
         print(f'{self.name} {self.lastname} {self.age}')
 
+    def __del__(self):
+        print(f'Person to delete {self._name} {self._lastname}')
 
-p = Person(name='Andy', lastname='Smith', age=33)
-print(p.name)
-p.name = 'John'
-print(p.name)
+if __name__ == '__main__':
+    p = Person(name='Andy', lastname='Smith', age=33)
+    print(p.name)
+    p.name = 'John'
+    p.lastname = 'Doe'
+    p.show()
+```
+## Lesson 7
+### Inheritance
+```
+class Person():
+
+    def __init__(self, name, lastname):
+        self.name = name
+        self.lastname = lastname
+
+    def __str__(self):
+        return f'Person [{self.name}, {self.lastname}]'
+
+
+class Employer(Person):
+
+    def __init__(self, name, lastname, salary):
+        super().__init__(name, lastname)
+        self.salary = salary
+
+    def __str__(self):
+        return f'{super().__str__()} {self.salary}'
+
+
+if __name__ == '__main__':
+    e = Employer('Andy', 'Roth', 30000)
+    print(e.name)
+```
+### Multi-Inheritance
+```
+from Shape import *
+from Color import *
+
+
+class Square(Shape, Color):
+    def __init__(self, h, color):
+        Shape.__init__(self, h,h)
+        Color.__init__(self, color)
+
+    def area(self):
+        return self.h ** 2
 ```

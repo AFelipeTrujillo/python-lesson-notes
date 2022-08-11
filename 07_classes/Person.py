@@ -31,10 +31,13 @@ class Person:
     def show(self):
         print(f'{self.name} {self.lastname} {self.age}')
 
+    def __del__(self):
+        print(f'Person to delete {self._name} {self._lastname}')
 
-p = Person(name='Andy', lastname='Smith', age=33)
-print(p.name)
-p.name = 'John'
-p.lastname = 'Doe'
-p.show()
 
+if __name__ == '__main__':
+    p = Person(name='Andy', lastname='Smith', age=33)
+    print(p.name)
+    p.name = 'John'
+    p.lastname = 'Doe'
+    p.show()
