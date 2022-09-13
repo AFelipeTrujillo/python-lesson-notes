@@ -480,7 +480,7 @@ if __name__ == '__main__':
     p.lastname = 'Doe'
     p.show()
 ```
-## Lesson 7
+## Lesson 8
 ### Inheritance
 ```
 class Person():
@@ -520,4 +520,45 @@ class Square(Shape, Color):
 
     def area(self):
         return self.h ** 2
+```
+### Method Resolution Order
+Method Resolution Order (MRO) is an algorithm for the construction of linearization - the list of all the ancestors of a class, including the class itself, ordered from the closest to the furthest. This is the order in which methods and attributes are looked up. 
+```
+print(Square.mro())
+```
+## Lesson 10
+### Static Class
+#### Variables Class
+```
+class MyClass:
+    my_var_class = 'Class var'
+
+    def __init__(self, instance_var):
+        self.instance_var = instance_var
+
+
+print(MyClass.my_var_class)
+obj = MyClass('Other var')
+print(obj.my_var_class, obj.instance_var)
+
+MyClass.other_class_var = 'Class var two'
+
+obj2 = MyClass('Other var 2')
+print(obj2.other_class_var)
+print(obj.other_class_var)
+```
+#### Static Method
+Use the decorator @staticmethod
+```
+class MyClass:
+    my_var_class = 'Class var'
+
+    def __init__(self, instance_var):
+        self.instance_var = instance_var
+
+    @staticmethod
+    def static_method():
+        print(MyClass.my_var_class)
+
+MyClass.static_method()
 ```
