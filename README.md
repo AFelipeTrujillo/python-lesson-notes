@@ -588,3 +588,9 @@ myObj1 = MyClass('my var')
 myObj1.method_class()
 myObj1.instance_method()
 ```
+## Lesson 12
+### Operator Overloading
+![](https://i.imgur.com/n8d839X.png)
+![](https://i.imgur.com/6WxYigZ.png)
+
+
