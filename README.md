@@ -612,7 +612,6 @@ print(p1 - p2)
 ```
 ## Lesson 13
 ### Polymorphism
-
 **Employer Class**
 ```
 class Employer():
