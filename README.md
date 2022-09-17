@@ -593,4 +593,70 @@ myObj1.instance_method()
 ![](https://i.imgur.com/n8d839X.png)
 ![](https://i.imgur.com/6WxYigZ.png)
 
+```
+class Persona:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __add__(self, other):
+        return f'{self.name} {other.name}'
+
+    def __sub__(self, other):
+        return self.age - other.age
+
+p1 = Persona('Andy', 20)
+p2 = Persona('Dany', 15)
+print(p1 + p2)
+print(p1 - p2)
+```
+## Lesson 13
+### Polymorphism
+
+**Employer Class**
+```
+class Employer():
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def __str__(self):
+        return f'Employer: {self.name} Salary: {self.salary}'
+
+    def show(self):
+        return self.__str__()
+```
+**Manager Class**
+```
+from Employer import Employer
+
+
+class Manager(Employer):
+
+    def __init__(self, name, salary, department):
+        super().__init__(name, salary)
+        self.department = department
+
+    def __str__(self):
+        return f'Manage {self.department} Employer {super().__str__()}'
+```
+**Test**
+```
+from Employer import Employer
+from Manager import Manager
+
+def print_details(obj):
+    #print(obj)
+    print(type(obj))
+    print(obj.show())
+    if isinstance(obj, Manager):
+        print(obj.department)
+
+e = Employer('Martha', 200000)
+print_details(e)
+
+m = Manager('Ann', 300000, 'IT')
+print_details(m)
+```
 
