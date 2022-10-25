@@ -662,19 +662,62 @@ print_details(m)
 ### Errors
 ![](https://i.imgur.com/7TKvpe5.png)
 ```
+from SameNumbersException import SameNumbersException
+
 result = None
-a = '10'
-b = 0
+a = 10
+b = 10
 try:
+    if a == b:
+        raise SameNumbersException('Numbers are the same')
     result = a / b
 except ZeroDivisionError as e:
     print(f'An error is happened: {e}')
 except TypeError as e:
     print(f'An type error is happened: {e}')
+except SameNumbersException as e:
+    print(f'Same Numbers: {e}')
 except Exception as e:
     print(f'An type error is happened: {e}')
+else:
+    print('NO EXCEPT')
+finally:
+    print('EXCEPT ENDS')
 
 print(f'Result: {result}')
 print('Continue...')
+```
+#### Add custom Except class
+```
+class SameNumbersException(Exception):
+    def __init__(self, message):
+        self.message = message
+```
+
+## Lesson 15
+### Files
+#### Create files and write
+![](https://i.imgur.com/y7sNNlZ.png)
+```
+try:
+    my_file = open('test.txt', 'w')
+    my_file.write('Add info')
+    my_file.write('bye')
+except Exception as e:
+    print(e)
+finally:
+    my_file.close()
+```
+#### Encoding
+```
+try:
+    my_file = open('test.txt', 'w', encoding='utf8')
+    my_file.write('Add info\n')
+    my_file.write('bye')
+except Exception as e:
+    print(e)
+finally:
+    my_file.close()
+    print('File close')
 ```
 
